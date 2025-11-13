@@ -18,13 +18,13 @@ type UserProductCouponEntity struct {
 	CouponState           string                 `json:"coupon_state,omitempty"`
 	ValidBeginTime        time.Time              `json:"valid_begin_time,omitempty"`
 	ValidEndTime          time.Time              `json:"valid_end_time,omitempty"`
-	ReceiveTime           string                 `json:"receive_time,omitempty"`
+	ReceiveTime           time.Time              `json:"receive_time,omitempty"`
 	SendRequestNo         string                 `json:"send_request_no,omitempty"`
 	SendChannel           string                 `json:"send_channel,omitempty"`
 	ConfirmRequestNo      string                 `json:"confirm_request_no,omitempty"`
 	ConfirmTime           time.Time              `json:"confirm_time,omitempty"`
 	DeactivateRequestNo   string                 `json:"deactivate_request_no,omitempty"`
-	DeactivateTime        string                 `json:"deactivate_time,omitempty"`
+	DeactivateTime        time.Time              `json:"deactivate_time,omitempty"`
 	DeactivateReason      string                 `json:"deactivate_reason,omitempty"`
 	SingleUsageDetail     *SingleUsageDetail     `json:"single_usage_detail,omitempty"`
 	SequentialUsageDetail *SequentialUsageDetail `json:"sequential_usage_detail,omitempty"`
