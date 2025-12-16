@@ -26,7 +26,7 @@ func (a *ProductCouponService) SendProductCoupon(ctx context.Context, openId str
 }
 
 func (a *ProductCouponService) ConfirmSendProductCoupon(ctx context.Context, openId string, couponCode string, req *UserProductCouponRequest) (resp *UserProductCouponEntity, result *core.APIResult, err error) {
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons/%s/confirm"
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons/%s/confirm"
 
 	result, err = a.Client.Post(ctx, fmt.Sprintf(localVarPath, openId, couponCode), req)
 	if err != nil {
@@ -47,7 +47,7 @@ func (a *ProductCouponService) UserProductCoupon(ctx context.Context, openId str
 	vals.Add("stock_id", req.StockId)
 	vals.Add("appid", req.Appid)
 	vals.Add("brand_id", req.BrandId)
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons/%s?" + vals.Encode()
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons/%s?" + vals.Encode()
 
 	result, err = a.Client.Get(ctx, fmt.Sprintf(localVarPath, openId, couponCode))
 	if err != nil {
