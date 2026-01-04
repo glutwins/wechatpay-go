@@ -74,7 +74,7 @@ func (a *ProductCouponService) ListUserProductCoupon(ctx context.Context, openId
 		vals.Add("stock_id", req.StockId)
 	}
 	vals.Add("appid", req.Appid)
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons?" + vals.Encode()
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons?" + vals.Encode()
 
 	result, err = a.Client.Get(ctx, fmt.Sprintf(localVarPath, openId))
 	if err != nil {
@@ -90,7 +90,7 @@ func (a *ProductCouponService) ListUserProductCoupon(ctx context.Context, openId
 }
 
 func (a *ProductCouponService) UseUserProductCoupon(ctx context.Context, openId string, couponCode string, req *UseUserProductCouponRequest) (resp *UserProductCouponEntity, result *core.APIResult, err error) {
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons/%s/use"
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons/%s/use"
 
 	result, err = a.Client.Post(ctx, fmt.Sprintf(localVarPath, openId, couponCode), req)
 	if err != nil {
@@ -106,7 +106,7 @@ func (a *ProductCouponService) UseUserProductCoupon(ctx context.Context, openId 
 }
 
 func (a *ProductCouponService) DeactivateUserProductCoupon(ctx context.Context, openId string, couponCode string, req *DeactivateUserProductCouponRequest) (resp *UserProductCouponEntity, result *core.APIResult, err error) {
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons/%s/deactivate"
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons/%s/deactivate"
 
 	result, err = a.Client.Post(ctx, fmt.Sprintf(localVarPath, openId, couponCode), req)
 	if err != nil {
@@ -122,7 +122,7 @@ func (a *ProductCouponService) DeactivateUserProductCoupon(ctx context.Context, 
 }
 
 func (a *ProductCouponService) ReturnUserProductCoupon(ctx context.Context, openId string, couponCode string, req *ReturnUserProductCouponRequest) (resp *UserProductCouponEntity, result *core.APIResult, err error) {
-	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users%s/coupons/%s/return"
+	localVarPath := consts.WechatPayAPIServer + "/v3/marketing/partner/product-coupon/users/%s/coupons/%s/return"
 
 	result, err = a.Client.Post(ctx, fmt.Sprintf(localVarPath, openId, couponCode), req)
 	if err != nil {

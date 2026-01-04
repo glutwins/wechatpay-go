@@ -139,8 +139,8 @@ type DiscountCouponUsageRule struct {
 }
 
 type ExchangeCouponUsageRule struct {
-	Threshold     int64 `json:"threshold,omitempty"`
-	ExchangePrice int64 `json:"exchange_price,omitempty"`
+	Threshold     int64 `json:"threshold"`
+	ExchangePrice int64 `json:"exchange_price"`
 }
 
 type SequentialCouponAvailablePeriod struct {
