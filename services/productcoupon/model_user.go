@@ -122,7 +122,7 @@ type UseUserProductCouponRequest struct {
 	ProductCouponId       string                                `json:"product_coupon_id,omitempty"`
 	StockId               string                                `json:"stock_id,omitempty"`
 	Appid                 string                                `json:"appid,omitempty"`
-	UseTime               time.Time                             `json:"use_time,omitempty"`
+	UseTime               string                                `json:"use_time,omitempty"`
 	AssociatedOrderInfo   *UserProductCouponAssociatedOrderInfo `json:"associated_order_info,omitempty"`
 	OutRequestNo          string                                `json:"out_request_no,omitempty"`
 	SequentialCouponIndex int64                                 `json:"sequential_coupon_index,omitempty"`
